@@ -1,0 +1,9 @@
+[user]
+	email = email@address.com
+	name = username
+[core]
+	excludesfile = /home/username/.gitignore
+[color]
+	ui = auto
+[alias]
+    jeep = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"

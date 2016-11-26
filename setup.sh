@@ -32,7 +32,7 @@ tput setaf 3
 	echo Installing necessary dependencies...
 	echo  
 	sleep 3
-tput setaf 2
+tput setaf 4
 	time sudo apt-get install git automake lzop flex bison gperf build-essential \
 	zlib1g-dev zlib1g-dev:i386 g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libbz2-1.0 \
 	libghc-bzlib-dev pngcrush schedtool liblz4-tool optipng maven yasm libc6-dev:i386 \
@@ -77,11 +77,11 @@ clear
 
 tput setaf 3
 	echo -e "${bldcya}Enter the path where source code should be downloaded in full format.\nDefault is ${HOME}/cm-14.1"
-tput setaf 2
+tput setaf 4
 	repo init -u git://github.com/tycle/android.git -b cm-14.1
 	time repo sync -f --force-sync --no-clone-bundle
 	echo  
-	echo -e "${bldcya}The RR Source Code has been downloaded into ${rrpath}"
+	echo -e "${bldcya}The Cyanogenmod Source Code has been downloaded into ${rrpath}"
 	echo -e "${bldcya}You can now run the build script in ${rrpath}"
 	echo -e "${bldcya}Please remember to run ccache -M 40 to set 40gb of ccache, before you start your first build :D" 
 	echo -e "${bldcya}This value can be shifted up/down a bit to your liking" 

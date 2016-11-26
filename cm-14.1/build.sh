@@ -48,9 +48,9 @@ tput setaf 3
 tput setaf 1
 	source build/envsetup.sh
 tput setaf 1
-	echo -e "You have chosen to build ResurrectionRemix OS for ${bldred} ${device}"
+	echo -e "You have chosen to build Cyanogenmod for ${bldred} ${device}"
 	echo  
-	echo -e "${bldvlt}Building Resurrection Remix OS now!"
+	echo -e "${bldvlt}Building Cyanogenmod now!"
 	echo  
 	sleep 3
 tput setaf 4
