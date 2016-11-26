@@ -18,14 +18,14 @@ bldcya=${txtbld}$(tput setaf 6) # Bold Cyan
 bldwht=${txtbld}$(tput setaf 7) # Bold White
 
 clear
-tput setaf 3
+tput setaf 1
 	echo -e "${bldcya}Enter the path where source code should be downloaded in full format.\nDefault is ${HOME}/cm-14.1"
 tput setaf 4
         echo 
-	# cd .repo/manifests 
-        # git reset --hard
-        # git clean -fd
-        # cd ../..
+	cd .repo/manifests 
+        git reset --hard
+        git clean -fd
+        cd ../..
         cd .repo/repo
         echo  
         git reset --hard

@@ -23,9 +23,9 @@ bldwht=${txtbld}$(tput setaf 7) # Bold White
 clear
 
 export USE_CCACHE=1
-export JACK_SERVER_VM_ARGUMENTS="-Xmx3072M"
+export JACK_SERVER_VM_ARGUMENTS="-Xmx3072M -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
-CCACHE_BIN=$(which ccache) # hanap ccache
+CCACHE_BIN=$(which ccache)
 if [ -z "$CCACHE_BIN" ]
 then
   CCACHE_BIN="prebuilts/misc/linux-x86/ccache/ccache"
@@ -39,39 +39,21 @@ then
     $CCACHE_BIN -M 40G
   fi
 fi
-
-        echo -e "${bldred}          ___          ___     "
-        echo -e "${bldred}         /  /\        /  /\    "
-        echo -e "${bldred}        /  /::\      /  /::\   "
-        echo -e "${bldred}       /  /:/\:\    /  /:/\:\  "
-        echo -e "${bldred}      /  /:/~/:/   /  /:/~/:/  "
-        echo -e "${bldred}     /__/:/ /:/___/__/:/ /:/___"
-        echo -e "${bldred}     \  \:\/:::::/\  \:\/:::::/"
-        echo -e "${bldred}      \  \::/~~~~  \  \::/~~~~ "
-        echo -e "${bldred}       \  \:\       \  \:\     "
-        echo -e "${bldred}        \  \:\       \  \:\    "
-        echo -e "${bldred}         \__\/        \__\/    "
-        echo -e "${bldred}                               "
-        echo -e "${bldred}       RESURRECTION REMIX OS   "
-        echo -e "${bldred}                               "
-        echo -e "${bldred}       M A R S H M A L L O W   "
-        echo -e "${bldred}                               "
-        echo -e "${bldcya}           Building RR!        "
 tput setaf 3
     sleep 1
     echo
     echo Setting up Build Environment...
     echo
 	sleep 2
-tput setaf 2
+tput setaf 1
 	source build/envsetup.sh
-tput setaf 3
+tput setaf 1
 	echo -e "You have chosen to build ResurrectionRemix OS for ${bldred} ${device}"
 	echo  
 	echo -e "${bldvlt}Building Resurrection Remix OS now!"
 	echo  
 	sleep 3
-tput setaf 2
+tput setaf 4
 	logfile="Z00A-$(date +%Y%m%d).log"
 	lunch cm_Z00A-userdebug && time mka bacon 2>&1 | tee $logfile
 	if [ $? -eq 0 ]; then
