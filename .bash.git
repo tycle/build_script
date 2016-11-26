@@ -1,0 +1,26 @@
+# git aliases / scripts
+
+git config --global core.excludesfile ~/.gitignore
+
+alias log='git log --oneline --no-merges'
+alias logr='git log --reverse --oneline --no-merges'
+
+alias gc="git cherry-pick"
+
+gc-series() {
+  logr $* | while read commit
+  do
+    sha1=`echo $commit | cut -d ' ' -f 1`
+    if ! gc --allow-empty $sha1
+    then
+      echo
+      echo
+      echo $commit
+      echo -n "Conflicts, resolve and hit enter: "
+      read < /dev/tty
+      git commit --allow-empty --reuse-message=$sha1
+      gc --abort 2>/dev/null
+    fi
+  done
+}
+
