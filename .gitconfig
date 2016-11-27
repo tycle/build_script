@@ -7,3 +7,5 @@
 	ui = auto
 [alias]
     jeep = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+    dcm  = "!f() { git reset --hard HEAD~$@ && git push origin cm-14.1 --delete && git push origin cm-14.1; }; f"
+    up   = "!f() { git push origin cm-14.1 --force; }; f"
